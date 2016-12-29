@@ -1,0 +1,17 @@
+<div class="container-fluid rootDiv">
+  
+    <div class="rootChild firstDiv" *ngIf="withScore">
+      <div class="col-xs-6">Your name</div>
+      <input id="champName" type="text" [(ngModel)]="champion"  class="col-xs-6">
+      <input id="saveButton" [disabled]="!champion" type="button" (click)="saveChampion()" value="Save Champion">
+    </div>
+    <div class="rootChild secDiv" >
+      <div *ngIf="noScores && !withScore"> No Scores Here !!! Play now and be a player</div>
+      <div *ngFor="let champion of champions">
+        <div class="col-xs-8">{{champion.name}}</div>
+        <div class="col-xs-4">{{champion.score}}</div>
+      </div>
+    </div>
+    <div class="innerGrid">
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="rootGamePage">
+    <div id="myNav" class="overlay" [ngClass]="{isGameInterrupted: isGameInterrupted}">
+    <div class="overlay-content">
+        <a href="#" *ngIf="isNewGame" (click)="createNewGame()">New Game</a>
+        <a href="#" *ngIf="!isNewGame" (click)="continueGame()">Continue</a>
+        <a href="#" (click)="gotoStats(score)">Exit</a>
+    </div>
+    </div>
+    <div class="shad timerDiv col-xs-12">
+        <span class="placeHolder tg">{{target}}</span>
+        <span class="span timerX color_0">{{timeOut}}</span>
+        <span class="span">{{timeOut}}</span>
+    </div>
+    <div>
+        <div class="shad col-xs-4 text-left"><span class="color_0 tg">{{target}}</span></div>
+        <div class="col-xs-4 text-center shad"><span class="color_0 tg">{{score}}</span></div>
+        <div class="shad col-xs-4 text-right"><span class="color_0 tg">{{output}}</span></div>
+    </div>
+    <br clear="all">
+    <div class="container">
+        <section>
+            <tile *ngFor="let numberVal of numbers" [isRed]="numberVal.color == 1" [isGreen]="numberVal.color == 3" [isBlue]="numberVal.color == 2"
+                [isTouched]="numberVal.isTouched" [isRotate]="numberVal.isRotate" [numberValue]="numberVal.numberValue" [tileIndex]="numberVal.numberIndex"
+                (mouseUp)="handleMouseUp($event)" (mousePress)="handleMousePress($event)" (mouseMove)="handleMouseMove($event)"></tile>
+        </section>
+    </div>
+    <br clear="all">
+</div>

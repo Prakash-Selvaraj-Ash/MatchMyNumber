@@ -1,0 +1,8 @@
+<div tileIndex="-1" class="gameTile"
+     [attr.tileIndex]="tileIndex"
+     [ngClass]="{touched : isTouched, flipFront : isRotate, flipBack : !isRotate, color_1 : isRed, color_2 : isBlue, color_3 : isGreen}"
+     (touchstart)="mousePressed($event, numberValue)" 
+     (touchmove)="mouseMoving($event, numberValue)" 
+     (touchend)="fireMouseUp($event)">
+     <span>{{numberValue}}</span>
+</div>

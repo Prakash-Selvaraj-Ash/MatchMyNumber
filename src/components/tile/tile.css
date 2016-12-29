@@ -1,0 +1,19 @@
+.tile{
+    border: #ccc solid 1px;
+    text-align: center;
+    font-family: 'kirbyss';
+}
+
+.touched{
+    background-color:#DDDDDD !important;
+    transition: 0.2s !important;
+}
+
+.flipFront{
+    transform: rotateX(0deg);
+    transition: 1s;
+}
+.flipBack{
+    transform: rotateX(360deg);
+    transition: 1s;
+}

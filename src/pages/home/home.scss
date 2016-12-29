@@ -1,0 +1,22 @@
+.homeSection{
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    background-image:url('../../img/bg1.svg');
+    background-repeat:no-repeat;
+    background-size:100% 120%;
+    div{    
+        padding: 20px;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            font-size: 2em;
+        }
+        
+        i {
+            font-size: 5em;
+        }
+    }
+}

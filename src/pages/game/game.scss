@@ -1,0 +1,212 @@
+$color_sub:#ff3b3b;
+$color_add:#005eff;
+$color_mul:#99ff00;
+
+.tile{
+    border: #ccc solid 1px;
+    text-align: center;
+    font-family: 'kirbyss';
+}
+
+.touched{
+    background-color:#DDDDDD !important;
+    transition: 0.2s !important;
+}
+
+.flipFront{
+    transform: rotateX(0deg);
+    transition: 1s;
+}
+.flipBack{
+    transform: rotateX(360deg);
+    transition: 1s;
+}
+
+
+.rootGamePage{
+    background-color:white;
+    background-image:url('../../img/bg1.svg');
+    background-repeat:no-repeat;
+    background-size:100% 120%;
+    height: 100%;
+}
+.container{
+    height:100%;
+    min-height:100%;
+    padding:12%; 
+    .gameTile {
+            float: left;
+            height: 17vw;
+            margin: 1%;
+            width: 23%;
+            position:relative;
+            border-radius:5%;
+            font-family: 'Finger Paint';
+            span {
+                margin: 0;
+                width:23px;
+                height:23px;
+                border-radius:50%;
+                background-color:white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%) ;
+                color:black;
+                font-size:18px;
+                text-align:center;
+        }
+    }
+}
+
+body{
+    font-family:"Finger Paint";
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */    
+}
+
+ion-page.show-page { display: -webkit-box; }
+.tg{padding: 10px 15px;}
+.color_0{ border: solid 5px darkgoldenrod; opacity: 0.7}
+.color_1{ background: $color_sub; opacity:0.9}
+.color_2{ background: $color_add;opacity:0.9}
+.color_3{ background: $color_mul;opacity:0.9}
+
+.m-t-10{margin-top: 10%}
+.shad
+{
+    padding:4%;
+    border-radius: 5%; 
+   	margin-top:8%;
+    font-size:x-large;
+    position:relative;
+}
+.timerDiv{
+    .placeHolderSpan{
+        border-radius: 50%;
+        padding: 4%;
+        position: fixed;
+        color:transparent;
+    }
+    .span{
+        top:0%;
+        left: 40%;
+        border-radius: 50%;
+        padding: 4%;
+        position: absolute;
+    }
+    .placeHolder{
+        color:transparent;
+    }
+}
+
+@mixin animationBase() {
+    
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.timerX{
+    color:transparent;
+    @include animationBase();
+    -webkit-animation-name: spinX;
+    -moz-animation-name: spinX;
+    -ms-animation-name: spinX;
+    animation-name: spinX;
+}
+
+@-ms-keyframes spinX {
+    from { -ms-transform: rotateY(0deg); }
+    to { -ms-transform: rotateY(360deg); }
+}
+@-moz-keyframes spinX {
+    from { -moz-transform: rotateY(0deg); }
+    to { -moz-transform: rotateY(360deg); }
+}
+@-webkit-keyframes spinX {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes spinX {
+    from {
+        transform:rotateY(0deg);
+    }
+    to {
+        transform:rotateY(360deg);
+    }
+}
+
+.tile {
+    border: #ccc solid 1px;
+    display: block;
+    float: left; 
+    padding: 20px;
+    text-align: center;
+}
+
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+
+.isGameInterrupted{
+    width: 100%;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+}
