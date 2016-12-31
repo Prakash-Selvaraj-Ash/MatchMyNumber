@@ -232,7 +232,6 @@ export class GamePage {
     }
 
     handleMouseMove(mouseObj) {
-        var numb: NumberModel;
         var event = mouseObj.event;
         var element = document.elementFromPoint(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
         var currEleIndex = element.getAttribute("tileIndex");
